@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children-prop?render-prop</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        /*
+            Props in JSX:
+        -<YourComponent 
+                proName1 = “String literals”
+                proName2 = “expression”
+            />
+        -Props default to “true”.
+        -Spread/rest props.
+        -children props.
+            -<YourComponent>String literal</YourComponent>
+            -<YourComponent>{expression}</YourComponent>
+        -render props.
+        */
+        const Input = ({label,...rest}) => {
+            const propsAfterLabel = {...rest}
+            console.log(propsAfterLabel)
+            return <div>
+                <label htmlFor = {propsAfterLabel.id}>{label} : </label>
+                <input {...propsAfterLabel}   />
+            </div>
+        }
+        const Span = ({...props}) => {
+            return (
+                <span props >Test value</span>
+            )
+        }
+        function App(){
+            return (
+                <div id ="wrapper">
+                    <Span
+                    id = "span" 
+                    data-span = "true"
+                    number = '2' 
+                 />
+                    <Input
+                        label = "Your name"
+                        type = "text"
+                        placeholder = "Enter text"
+                        id = "input-text"
+                        title = "input tag"
+                        onFocus = {
+                            () => {
+                                console.log(Math.random());
+                            }
+                        }
+                    />                   
+                </div>
+            )
+        }
+        ReactDOM.render(<App />,document.getElementById("root"))
+    </script>
+</body>
+</html>

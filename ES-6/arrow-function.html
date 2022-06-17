@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow function</title>
+  </head>
+  <body>
+    <script>
+      const sum = (a,b) => a + b;
+      console.log(sum(2,3));
+
+      const myObject = (a,b) => ({a:a,b:b});
+      console.log(myObject(2,3));
+
+        const myName = {
+          name: "truong",
+          getName : function(){
+              return this.name;
+          }
+        };
+        console.log(myName.getName());
+
+        var myObjectConstructor = (name,old) =>{
+            this.name = name;
+            this.old  = old
+        }
+        var myInfo = new myObjectConstructor('Truong',20);
+        console.log(myInfo);
+    </script>
+  </body>
+</html>

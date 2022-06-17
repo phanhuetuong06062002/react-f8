@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread</title>
+</head>
+<body>
+    <script>
+        // var myArr1 = ['a','b','c','d'];
+        // var myArr2 = ['e','f','g','h'];
+        // var myArr3 = [...myArr1,...myArr2];
+        // console.log(myArr3);
+
+        // var myObj = {
+        //     name: 'Javascript',
+        // }
+        // var cost= {
+        //     cost : 180,
+        // }
+        // var newObj = {
+        //     ...myObj,
+        //     ...cost,
+        // }
+        // console.log(newObj)
+
+        // var defaultConfig = {
+        //     api : 'https://domain-trang-khoa-hoc',
+        //     apiVersion: 'v1',
+        //     other : 'other',
+        // }
+        // var exerciseConfig = {
+        //     ...defaultConfig,
+        //     api:'https://domain-trang-bai-tap',
+        // }
+        // console.log(exerciseConfig);
+
+        var array = ['Javascript','Php','Ruby','React'];
+        function logger(...rest){
+            for(var i = 0 ;i < rest.length ;i++){
+                 console.log(rest[i]);
+            }
+        }
+        logger(...array);
+    </script>
+</body>
+</html>

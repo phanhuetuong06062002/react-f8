@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JXS</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <h1>JXS</h1>
+    <div id="root"></div>
+    <script type="text/babel">
+      /*
+        JSX ->Javascript XML
+        -XML is open tag & close tag, HTML is expand of XML.
+        -JSX was born to write XML & HTML in Javascript file.
+        1.Alway use React.createElement() ? Problem?
+        2.JSX? Live demo :https://bit.ly/2VOIMN7
+        3.JSX doesn’t HTML,need Javascript & Babel to use JSX
+        4.JSX & React-DOM.
+
+         <ul>
+                <li>Javascript</li>
+                <li>ReactJS</li>    
+            </ul>
+        */
+        let root = document.getElementById("root")
+        const courses = [
+            {
+            name: "HTML,CSS",
+            },
+            {
+            name: "Responsive web design",
+            },
+            {
+            name: "Reactjs",
+            },
+        ];
+        // const jsx = (
+        //   <React.Fragment>
+        //     <ul>
+        //         <li>Javascript1</li>
+        //         <li>ReactJS1</li>
+        //     </ul>
+        //     <ul>
+        //         <li>Javascript2</li>
+        //         <li>ReactJS</li>
+        //     </ul>
+        //   </React.Fragment>
+        // )
+        const jsx = React.createElement(React.Fragment, {},
+          React.createElement('ul',
+          {},
+          React.createElement('li',null,'Javascript1'),
+          React.createElement('li',null,'ReactJS1'),
+          ),
+          React.createElement('ul',
+          {},
+          React.createElement('li',null,'Javascript2'),
+          React.createElement('li',null,'ReactJS2'),
+          ),
+        );
+        ReactDOM.render(jsx,root);
+    </script>
+  </body>
+</html>

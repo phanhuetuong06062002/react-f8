@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactjs</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+</head>
+<body>
+    <h1>Add react into website</h1>
+    <script>
+        /*
+            1.React.createElement() -> React element
+            2.Compare with document.createElement() -> DOM element
+            3.Change : id,className,style,...
+            4.Add : text,HTML
+            5.Create:
+                <h1 title = "Hello" class = "heading">Hello guys!</h1>
+            6.Create:
+                <ul>
+                    <li>Javascript</li>
+                    <li>ReactJS</li>    
+                </ul>
+            7.Create:
+                <div class="post-item">
+                    <h2 title = "Học React tại F8">Học ReactJS</h2>
+                    <p>Học ReactJS from founder to advance</p>
+                </div>
+        */
+       //5.
+        //DOM
+
+        // const h1Dom = document.createElement("h1");
+        // h1Dom.title = "Hello";
+        // h1Dom.className = "Heading";
+        // h1Dom.style = "color:red;font-size:25px";
+        // h1Dom.innerHTML = "Test HTML DOM";
+        // document.body.appendChild(h1Dom);
+
+        //ReactDom//React.createElement(tag,props,children,children_n);
+        
+        // const h1ReactDom = React.createElement('h1',{
+        //     title : "Hello",
+        //     className : "Heading",
+        //     style : "color:red;font-size:25px",
+        // },'Test HTML DOM');
+        // console.dir(h1Dom);
+        // console.log(h1ReactDom);
+
+        //6.
+        //DOM
+        
+        const ulDom = document.createElement("ul");
+        const liDom1 = document.createElement("li");
+        const liDom2 = document.createElement("li");     
+        liDom1.innerText = "Javascript";
+        liDom2.innerText = "Reactjs";
+        liDom1.id ='id-li-1';
+        liDom2.id = 'id-li-2';
+        liDom2.style = 'color:red;font-size:24px';
+        ulDom.appendChild(liDom1);
+        ulDom.appendChild(liDom2);
+        document.body.appendChild(ulDom);
+
+        //ReactDOM
+
+        // const ulReactDom = React.createElement('ul',null,
+        //     React.createElement('li',{
+        //         id:'id-li-1'
+        //     },'Javascript'),
+        //     React.createElement('li',{
+        //         id:'id-li-2',
+        //         style : 'color:red;font-size:35px',
+        //     },'Reactjs'),
+        // );
+        // console.dir(ulDom);
+        // console.log(ulReactDom);
+
+        //7.
+
+        //DOM
+
+        // var divPostItem = document.createElement('div');
+        // divPostItem.className = 'post-item'
+        // const h2Dom = document.createElement('h2');
+        // h2Dom.title = 'Learn React at F8';
+        // h2Dom.innerHTML = 'Learn ReactJs';
+        // const p = document.createElement('p');
+        // p.innerHTML = 'Learn Reactjs from basic to advance';
+        // divPostItem.appendChild(h2Dom);
+        // divPostItem.appendChild(p);
+        // document.body.appendChild(divPostItem);
+        // console.dir(divPostItem);
+
+        //React
+        const divPostItemReact = React.createElement('div',{
+            className : 'post-item',
+        },
+            React.createElement('h2',{
+                title : 'Learn React at F8!',
+            },'Learn ReactJs'),
+            React.createElement('p',null,"Learn React from basic to advance"),
+        );
+        console.log(divPostItemReact);
+    </script>
+</body>
+</html>
